@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"database/sql"
 	"errors"
 	"github.com/labstack/gommon/log"
 	"github.com/lib/pq"
@@ -44,7 +45,33 @@ func (u UserRepoImpl) SaveUser(context context.Context , user model.User) (model
 	return user , nil
 }
 
-func (u UserRepoImpl) SelectUserByEmail(conetxt context.Context, email string ) (model.User , error){
+func (u UserRepoImpl) SelectUserByEmail(context context.Context, email string) (model.User , error){
 
-	return model.User{}, nil
+	var user = model.User{}
+	statement :=`SELECT * FROM users WHERE email=$1`
+	err:= u.sql.Db.GetContext(context, &user , statement,email)
+	if err!=nil{
+		if err ==sql.ErrNoRows{
+			return user, errors.New("Không tồn tại user")
+		}
+		log.Error(err.Error())
+		return user , err
+	}
+	return user,nil
+}
+
+
+func (u UserRepoImpl) SelectUserById(context context.Context, userId string) (model.User , error){
+
+	var user = model.User{}
+	statement :=`SELECT * FROM users WHERE user_id=$1`
+	err:= u.sql.Db.GetContext(context, &user , statement,userId)
+	if err!=nil{
+		if err ==sql.ErrNoRows{
+			return user, errors.New("Không tồn tại user")
+		}
+		log.Error(err.Error())
+		return user , err
+	}
+	return user,nil
 }

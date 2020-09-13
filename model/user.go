@@ -9,8 +9,9 @@ type User struct {
 	Email string `json:"email,omitempty" db:"email, omitempty"`
 	Avatar string `json:"avatar,omitempty" db:"avatar, omitempty"`
 	Phone string `json:"phone,omitempty" db:"phone, omitempty"`
+	Address *string `json:"address,omitempty" db:"address, omitempty"`
 	Password string `json:"-" db:"password, omitempty"`
-	Role string `json:"-,omitempty" db:"role, omitempty"`
+	Role string `json:"-" db:"role, omitempty"`
 	CreatedAt time.Time `json:"-" db:"created_at, omitempty"`
 	UpdatedAt time.Time `json:"-" db:"updated_at, omitempty"`
 
