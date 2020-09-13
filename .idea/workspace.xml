@@ -20,15 +20,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2586884-cc71-47a2-bd58-7e8d1a175b30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/dev/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/pro/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/env.dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/env.pro.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/role.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/sign_up.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/user_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/user_handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/1_init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/1_init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/user_repo.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/user_repo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/user_repo_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/user_repo_impl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/pass.go" beforeDir="false" afterPath="$PROJECT_DIR$/security/pass.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" path="$USER_HOME$/sdk/go1.15.2" />
   <component name="Git.Settings">
@@ -43,6 +67,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
@@ -51,10 +76,15 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cmd/pro" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cmd/pro" />
+      <recent name="$PROJECT_DIR$/cmd/dev" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -79,9 +109,10 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="397" y="178" key="SettingsEditor" timestamp="1599904711638">
-      <screen x="0" y="23" width="1792" height="1033" />
+    <state x="630" y="193" key="SettingsEditor" timestamp="1599968363538">
+      <screen x="0" y="23" width="1792" height="1034" />
     </state>
     <state x="397" y="178" key="SettingsEditor/1792.63.1920.1057/0.23.1792.1033@0.23.1792.1033" timestamp="1599904711638" />
+    <state x="630" y="193" key="SettingsEditor/1792.63.1920.1057/0.23.1792.1034@0.23.1792.1034" timestamp="1599968363538" />
   </component>
 </project>
