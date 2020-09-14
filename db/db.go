@@ -12,8 +12,9 @@ import (
 type SQL struct {
 	Db *sqlx.DB
 }
+
 // connect to postgres db
-func (s *SQL) Connect (cfg model.Config) {
+func (s *SQL) Connect(cfg model.Config) {
 	dataSource := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		cfg.Database.DbHost,
 		cfg.Database.DbPort,
@@ -24,13 +25,13 @@ func (s *SQL) Connect (cfg model.Config) {
 	//fmt.Println(dataSource)
 
 	s.Db = sqlx.MustConnect("postgres", dataSource)
-	if err:= s.Db.Ping();err!=nil {
+	if err := s.Db.Ping(); err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println("Connect db ok")
 }
 
 //close connection
-func (s *SQL) Close()  {
+func (s *SQL) Close() {
 	s.Db.Close()
 }

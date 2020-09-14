@@ -2,23 +2,23 @@ package main
 
 import (
 	"fmt"
+	"gopkg.in/yaml.v2"
 	"os"
 	"timewise/db"
-	"gopkg.in/yaml.v2"
 	"timewise/model"
 )
 
-func main(){
+func main() {
 	var cfg model.Config
 	loadConfig(&cfg)
 
-	var sql = new (db.SQL)
+	var sql = new(db.SQL)
 	sql.Connect(cfg)
-	defer  sql.Close()
+	defer sql.Close()
 }
-func loadConfig(cfg *model.Config)  {
+func loadConfig(cfg *model.Config) {
 	f, err := os.Open("../../env.dev.yml")
-	if(err !=nil){
+	if err != nil {
 		fmt.Println(err)
 	}
 	defer f.Close()
