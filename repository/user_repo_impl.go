@@ -74,3 +74,17 @@ func (u UserRepoImpl) SelectUserById(context context.Context, userId string) (mo
 	}
 	return user, nil
 }
+
+func  (u UserRepoImpl) SelectUsers(context context.Context) ([]model.User, error) {
+	var users []model.User
+	statement := `SELECT * FROM users ORDER BY created_at DESC`
+	err := u.sql.Db.SelectContext(context, &users , statement)
+	if err!=nil {
+		if err == sql.ErrNoRows {
+			return users, errors.New("Chưa có người dùng nào")
+		}
+		log.Error(err.Error())
+		return users , err
+	}
+	return users , nil
+}

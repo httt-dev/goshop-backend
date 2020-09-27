@@ -158,3 +158,22 @@ func (u UserHandler) HandlerProfile(c echo.Context) error {
 		Data:       user,
 	})
 }
+
+/**
+Lấy danh sách users
+ */
+func (u UserHandler) HandlerListUsers( c echo.Context) error {
+	users , err := u.UserRepo.SelectUsers(c.Request().Context())
+	if err !=nil {
+		return c.JSON(http.StatusInternalServerError, model.Response{
+			StatusCode: http.StatusInternalServerError,
+			Message: err.Error(),
+			Data : nil,
+		})
+	}
+	return c.JSON(http.StatusOK, model.Response{
+		StatusCode: http.StatusOK,
+		Message: "Xử lý thành công",
+		Data:users,
+	})
+}

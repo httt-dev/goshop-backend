@@ -18,5 +18,5 @@ func (api *API) SetupRouter() {
 	user.POST("/sign-in", api.UserHandler.HandlerSignIn)
 	//user.GET("/profile/:id", api.UserHandler.HandlerProfile , middleware.JWTMiddleware())
 	user.GET("/profile", api.UserHandler.HandlerProfile, middleware.JWTMiddleware())
-
+	user.GET("/list", api.UserHandler.HandlerListUsers , middleware.JWTMiddleware())
 }

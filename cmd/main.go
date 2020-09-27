@@ -3,15 +3,22 @@ package main
 import (
 	"fmt"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"gopkg.in/yaml.v2"
 	"os"
 	"strconv"
 	"timewise/db"
 	"timewise/handler"
+	log "timewise/log"
 	"timewise/model"
 	"timewise/repository"
 	"timewise/router"
 )
+
+func init(){
+	os.Setenv("APP_NAME", "timewise")
+	log.InitLogger(false)
+}
 
 func main() {
 
@@ -24,9 +31,9 @@ func main() {
 	defer sql.Close()
 
 	e := echo.New()
-	//e.Use(middleware.CORS())
+	e.Use(middleware.CORS())
 	//e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-	//	AllowOrigins: []string{"localhost:8080"},
+	//	AllowOrigins: []string{"localhost:3001"},
 	//	AllowHeaders: []string{echo.HeaderOrigin,echo.HeaderContentType, echo.HeaderAccept},
 	//}))
 
