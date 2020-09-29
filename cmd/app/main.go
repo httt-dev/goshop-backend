@@ -32,10 +32,10 @@ func main() {
 
 	e := echo.New()
 	e.Use(middleware.CORS())
-	//e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-	//	AllowOrigins: []string{"localhost:3001"},
-	//	AllowHeaders: []string{echo.HeaderOrigin,echo.HeaderContentType, echo.HeaderAccept},
-	//}))
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"*"},
+		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
+	}))
 
 	//setup validator
 	//structValidator := validator.NewStrcutValidator()
@@ -68,7 +68,7 @@ func setEnv(cfg *model.Config) {
 Load config
 */
 func loadConfig(cfg *model.Config) {
-	f, err := os.Open("../env.dev.yml")
+	f, err := os.Open("../../env.dev.yml")
 	if err != nil {
 		fmt.Println(err)
 	}
