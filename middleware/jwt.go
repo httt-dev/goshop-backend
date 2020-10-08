@@ -5,7 +5,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"net/http"
-	"timewise/app_err"
+	"timewise/app_constant"
 	"timewise/model"
 	"timewise/security"
 )
@@ -26,7 +26,7 @@ func CheckAdminRole() echo.MiddlewareFunc  {
 			if claims.Role != model.ADMIN.String() {
 				return context.JSON(http.StatusForbidden, model.Response{
 					StatusCode: http.StatusForbidden,
-					Message:    app_err.Http_AccessNotAllow,
+					Message:    app_constant.Http_AccessNotAllow,
 					Data:       nil,
 				})
 			}

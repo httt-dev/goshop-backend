@@ -6,7 +6,7 @@ import (
 	"errors"
 	"github.com/lib/pq"
 	"time"
-	"timewise/app_err"
+	"timewise/app_constant"
 	"timewise/db"
 	"timewise/log"
 	"timewise/model"
@@ -65,7 +65,7 @@ func (c CateRepoImpl) SelectCateById(ctx context.Context , cateId string ) (mode
 	err := c.sql.Db.GetContext(ctx,&cate , statement, cateId)
 	if err !=nil{
 		if err ==sql.ErrNoRows{
-			return cate, app_err.DataNotFound
+			return cate, app_constant.DataNotFound
 		}
 		log.Error(err.Error())
 		return cate, err
@@ -81,7 +81,7 @@ func (c CateRepoImpl) SelectCates(context context.Context) ([]model.Cate, error)
 
 	if err != nil {
 		if err == sql.ErrNoRows {
-			return cates, app_err.DataNotFound
+			return cates, app_constant.DataNotFound
 		}
 		log.Error(err.Error())
 		return cates, err

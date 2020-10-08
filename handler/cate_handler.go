@@ -4,7 +4,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/labstack/echo/v4"
 	"net/http"
-	"timewise/app_err"
+	"timewise/app_constant"
 	"timewise/log"
 	"timewise/model"
 	"timewise/repository"
@@ -75,7 +75,7 @@ func (c CateHandler) HandlerCateDetail(ctx echo.Context) error {
 
 	cate, err := c.CateRepo.SelectCateById(ctx.Request().Context(), cateId)
 	if err != nil {
-		if err == app_err.DataNotFound {
+		if err == app_constant.DataNotFound {
 			return ctx.JSON(http.StatusNotFound, model.Response{
 				StatusCode: http.StatusNotFound,
 				Message:    err.Error(),
