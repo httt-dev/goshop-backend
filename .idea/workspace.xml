@@ -23,10 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2586884-cc71-47a2-bd58-7e8d1a175b30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/gen/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_err/app_error.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/cate_handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/2_product_module_cate.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/cate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/cate_repo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/cate_repo_impl.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/app/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/user_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/user_handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/app/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/app/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/gen/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/gen/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbconfig.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dbconfig.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/jwt.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/api.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,19 +71,50 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/cmd/gen" />
-    <property name="settings.editor.selected.configurable" value="go.autoimport" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cmd/app" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cmd/gen" />
       <recent name="$PROJECT_DIR$/cmd/pro" />
       <recent name="$PROJECT_DIR$/cmd/dev" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cmd/app" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GoAppEngineRunConfiguration" factoryName="Go App Engine">
+      <module name="go-backend" />
+      <working_directory value="$PROJECT_DIR$" />
+      <HOST value="localhost" />
+      <PORT value="3000" />
+      <ADMIN_PORT value="3000" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="go-backend" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/../go-backend|$PROJECT_DIR$/cmd/app/main.go" />
+      <package value="timewise" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build go-backend main" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="go-backend" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/cmd/app/main.go" />
+      <package value="timewise" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,11 +136,63 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="616" y="195" key="SettingsEditor" timestamp="1600091594949">
+    <state x="360" y="199" width="1071" height="801" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602132455409">
       <screen x="0" y="23" width="1792" height="1026" />
     </state>
-    <state x="616" y="195" key="SettingsEditor/1792.63.1920.1057/0.23.1792.1026@0.23.1792.1026" timestamp="1600091594949" />
+    <state x="360" y="199" width="1071" height="801" key="#com.intellij.execution.impl.EditConfigurationsDialog/1792.63.1920.1057/0.23.1792.1026@0.23.1792.1026" timestamp="1602132455409" />
+    <state width="1750" height="345" key="GridCell.Tab.0.bottom" timestamp="1602132504963">
+      <screen x="0" y="23" width="1792" height="1026" />
+    </state>
+    <state width="1750" height="345" key="GridCell.Tab.0.bottom/1792.63.1920.1057/0.23.1792.1026@0.23.1792.1026" timestamp="1602132504963" />
+    <state width="1750" height="345" key="GridCell.Tab.0.center" timestamp="1602132504962">
+      <screen x="0" y="23" width="1792" height="1026" />
+    </state>
+    <state width="1750" height="345" key="GridCell.Tab.0.center/1792.63.1920.1057/0.23.1792.1026@0.23.1792.1026" timestamp="1602132504962" />
+    <state width="1750" height="345" key="GridCell.Tab.0.left" timestamp="1602132504962">
+      <screen x="0" y="23" width="1792" height="1026" />
+    </state>
+    <state width="1750" height="345" key="GridCell.Tab.0.left/1792.63.1920.1057/0.23.1792.1026@0.23.1792.1026" timestamp="1602132504962" />
+    <state width="1750" height="345" key="GridCell.Tab.0.right" timestamp="1602132504963">
+      <screen x="0" y="23" width="1792" height="1026" />
+    </state>
+    <state width="1750" height="345" key="GridCell.Tab.0.right/1792.63.1920.1057/0.23.1792.1026@0.23.1792.1026" timestamp="1602132504963" />
+    <state width="1750" height="345" key="GridCell.Tab.1.bottom" timestamp="1602132504965">
+      <screen x="0" y="23" width="1792" height="1026" />
+    </state>
+    <state width="1750" height="345" key="GridCell.Tab.1.bottom/1792.63.1920.1057/0.23.1792.1026@0.23.1792.1026" timestamp="1602132504965" />
+    <state width="1750" height="345" key="GridCell.Tab.1.center" timestamp="1602132504964">
+      <screen x="0" y="23" width="1792" height="1026" />
+    </state>
+    <state width="1750" height="345" key="GridCell.Tab.1.center/1792.63.1920.1057/0.23.1792.1026@0.23.1792.1026" timestamp="1602132504964" />
+    <state width="1750" height="345" key="GridCell.Tab.1.left" timestamp="1602132504964">
+      <screen x="0" y="23" width="1792" height="1026" />
+    </state>
+    <state width="1750" height="345" key="GridCell.Tab.1.left/1792.63.1920.1057/0.23.1792.1026@0.23.1792.1026" timestamp="1602132504964" />
+    <state width="1750" height="345" key="GridCell.Tab.1.right" timestamp="1602132504965">
+      <screen x="0" y="23" width="1792" height="1026" />
+    </state>
+    <state width="1750" height="345" key="GridCell.Tab.1.right/1792.63.1920.1057/0.23.1792.1026@0.23.1792.1026" timestamp="1602132504965" />
+    <state x="616" y="195" key="SettingsEditor" timestamp="1602144889533">
+      <screen x="0" y="23" width="1792" height="1026" />
+    </state>
+    <state x="616" y="195" key="SettingsEditor/1792.63.1920.1057/0.23.1792.1026@0.23.1792.1026" timestamp="1602144889533" />
     <state x="397" y="178" key="SettingsEditor/1792.63.1920.1057/0.23.1792.1033@0.23.1792.1033" timestamp="1599904711638" />
     <state x="630" y="193" key="SettingsEditor/1792.63.1920.1057/0.23.1792.1034@0.23.1792.1034" timestamp="1599968363538" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/log/log.go</url>
+          <line>39</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/log/log.go</url>
+          <line>48</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

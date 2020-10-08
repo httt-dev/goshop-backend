@@ -46,10 +46,13 @@ func main() {
 	userHandler := handler.UserHandler{
 		UserRepo: repository.NewUserRepo(sql),
 	}
-
+	cateHandler := handler.CateHandler{
+		CateRepo: repository.NewCateRepo(sql),
+	}
 	api := router.API{
 		Echo:        e,
 		UserHandler: userHandler,
+		CateHandler: cateHandler,
 	}
 	api.SetupAdminRouter()
 	// Tạo một Firewall
